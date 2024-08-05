@@ -13,10 +13,10 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
     if (err) {
-        console.error('Error de conexión: ' + err.stack);
+        console.error('Connection error: ' + err.stack);
         return;
     }
-    console.log('Conectado a la base de datos como id ' + connection.threadId);
+    console.log('Connected to database with id ' + connection.threadId);
 });
 
 export default connection;
