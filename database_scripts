@@ -1,0 +1,38 @@
+-- Crear la base de datos
+CREATE DATABASE mi_base_de_datos;
+
+-- Seleccionar la base de datos
+USE mi_base_de_datos;
+
+-- Crear la tabla tipo_producto
+CREATE TABLE tipo_producto (
+    codTipo INT AUTO_INCREMENT PRIMARY KEY,
+    nombreTipo VARCHAR(100) NOT NULL
+);
+
+-- Crear la tabla productos
+CREATE TABLE productos (
+    CodProducto INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(255) NOT NULL,
+    productoComprado BOOLEAN NOT NULL DEFAULT FALSE,
+    precioVenta DECIMAL(10, 2) NOT NULL,
+    CodTipo INT NULL,
+    FOREIGN KEY (CodTipo) REFERENCES tipo_producto(codTipo)
+);
+
+-- Insertar datos en la tabla tipo_producto
+INSERT INTO tipo_producto (nombreTipo) VALUES ('Electrónica');
+INSERT INTO tipo_producto (nombreTipo) VALUES ('Ropa');
+INSERT INTO tipo_producto (nombreTipo) VALUES ('Alimentos');
+
+-- Insertar datos en la tabla productos
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Smartphone', TRUE, 499.99, 1);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Jeans', FALSE, 79.99, 2);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Chocolate', TRUE, 5.99, 3);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Laptop', TRUE, 899.99, 1);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Camiseta', FALSE, 19.99, 2);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Galletas', TRUE, 2.99, 3);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Tablet', TRUE, 299.99, 1);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Pantalones', FALSE, 39.99, 2);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Cereal', TRUE, 4.99, 3);
+INSERT INTO productos (descripcion, productoComprado, precioVenta, CodTipo) VALUES ('Televisor', TRUE, 399.99, 1);
