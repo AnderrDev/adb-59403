@@ -93,11 +93,11 @@ router.get('/:id', getProductByIdController);
  *             properties:
  *               description:
  *                 type: string
- *               purchased:
+ *               productPurchased:
  *                 type: boolean
  *               salePrice:
  *                 type: number
- *               TypeId:
+ *               typeCode:
  *                 type: integer
  *     responses:
  *       201:

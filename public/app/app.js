@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageDiv = document.getElementById('message');
     const codTipoSelect = document.getElementById('CodTipo');
 
-    const apiUrl = 'http://localhost:3000';
+    const apiUrl = 'http://3.12.107.253:3000/api';
 
     // Cargar tipos de producto
     fetch(`${apiUrl}/tipo_producto`)
